@@ -114,11 +114,19 @@
             <svg id="knight-tour" viewBox="0 0 320 320" role="img"
                  aria-label="A knight&rsquo;s tour traced on an eight by eight grid of points">
               <g class="tour-grid" id="tour-grid"></g>
-              <path class="tour-path" id="tour-path"
-                    d="M140 140 L60 180 L20 260 L100 300 L60 220 L20 300 L100 260 L180 300 L260 260 L300 180 L260 100 L300 20 L220 60 L140 20 L60 60 L20 140 L100 100 L20 60 L100 20 L180 60 L260 20 L300 100 L220 140 L260 60 L180 20 L140 100 L60 140 L20 220 L60 300 L140 260 L220 300 L300 260 L260 180 L180 220 L140 300 L100 220 L20 180 L60 260 L100 180 L60 100 L20 20 L100 60 L20 100 L60 20 L140 60 L220 20 L300 60 L220 100 L300 140 L260 220 L300 300 L220 260 L180 180 L100 140 L140 220 L180 140 L220 220 L140 180 L180 100 L260 140 L300 220 L260 300 L180 260 L220 180 L140 140"
-                    fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-dasharray="804.98 4919.35" stroke-dashoffset="804.98"/>
-              <circle class="tour-knight" id="tour-knight" cx="140" cy="140" r="5"/>
+              <!-- The tour's first nine moves, newest brightest, oldest faintest -->
+              <g class="tour-path" id="tour-path" fill="none" stroke-width="1.75" stroke-linecap="round">
+                <line x1="140" y1="140" x2="60" y2="180" opacity="0.09"/>
+                <line x1="60" y1="180" x2="20" y2="260" opacity="0.19"/>
+                <line x1="20" y1="260" x2="100" y2="300" opacity="0.28"/>
+                <line x1="100" y1="300" x2="60" y2="220" opacity="0.38"/>
+                <line x1="60" y1="220" x2="20" y2="300" opacity="0.47"/>
+                <line x1="20" y1="300" x2="100" y2="260" opacity="0.57"/>
+                <line x1="100" y1="260" x2="180" y2="300" opacity="0.66"/>
+                <line x1="180" y1="300" x2="260" y2="260" opacity="0.76"/>
+                <line x1="260" y1="260" x2="300" y2="180" opacity="0.85"/>
+              </g>
+              <circle class="tour-knight" id="tour-knight" cx="300" cy="180" r="5"/>
             </svg>
           </div>
           <figcaption>A closed knight&rsquo;s tour</figcaption>

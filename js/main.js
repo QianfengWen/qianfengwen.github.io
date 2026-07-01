@@ -90,28 +90,43 @@
     }
   }
 
-  var path = document.getElementById('tour-path');
+  var staticPath = document.getElementById('tour-path');
   var knight = document.getElementById('tour-knight');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // The markup carries a static window (the tour's last nine moves, ending on the
-  // knight's square). Animation slides that window along the closed loop forever;
-  // without JavaScript, or with reduced motion, the static frame simply stays.
+  // The markup carries a static trail (the tour's last nine moves, ending on the
+  // knight's square) for no-JS and reduced-motion visitors. With motion allowed,
+  // the trail is rebuilt as one <line> per move so each new move can be drawn in
+  // with a single-segment dash (dashing a many-vertex path hits Chromium
+  // rendering artifacts) and older moves can fade with age, comet-style.
   if (reduceMotion.matches) return;
 
-  var WINDOW = SEG * 9;
+  var TRAIL = 9;
   var STEP_MS = 640;
   var PAUSE_MS = 160;
-  var step = 0;
+  var HEAD_OPACITY = 0.85;
+  var EASE = 'cubic-bezier(0.45, 0, 0.25, 1)';
+  // The static markup shows the tour's first nine moves with the knight on
+  // square nine; the animation picks up from that exact frame.
+  var START_STEP = 9;
+  var step = START_STEP;
   var timer = null;
+  var lines = [];
 
-  path.style.transition = 'stroke-dashoffset ' + STEP_MS + 'ms cubic-bezier(0.45, 0, 0.25, 1)';
-  knight.style.transition = 'transform ' + STEP_MS + 'ms cubic-bezier(0.45, 0, 0.25, 1)';
+  var trailGroup = document.createElementNS(svgNS, 'g');
+  svg.insertBefore(trailGroup, knight);
+
+  var knightBase = [parseFloat(knight.getAttribute('cx')), parseFloat(knight.getAttribute('cy'))];
+  knight.style.transition = 'transform ' + STEP_MS + 'ms ' + EASE;
+  staticPath.style.transition = 'opacity ' + STEP_MS + 'ms linear';
 
   function placeKnight(i) {
-    var start = px(TOUR[0]);
     var p = px(TOUR[i % TOUR.length]);
-    knight.style.transform = 'translate(' + (p[0] - start[0]) + 'px, ' + (p[1] - start[1]) + 'px)';
+    knight.style.transform = 'translate(' + (p[0] - knightBase[0]) + 'px, ' + (p[1] - knightBase[1]) + 'px)';
+  }
+
+  function agedOpacity(age) {
+    return Math.max(HEAD_OPACITY * (1 - age / TRAIL), 0);
   }
 
   function advance() {
@@ -119,10 +134,48 @@
       timer = setTimeout(advance, 800);
       return;
     }
+    var from = px(TOUR[step % TOUR.length]);
     step += 1;
-    // Offsets grow negative without bound; the dash period equals the loop
-    // length, so the window wraps around the closed tour seamlessly.
-    path.style.strokeDashoffset = String(WINDOW - step * SEG);
+    var to = px(TOUR[step % TOUR.length]);
+
+    var line = document.createElementNS(svgNS, 'line');
+    line.setAttribute('x1', from[0]);
+    line.setAttribute('y1', from[1]);
+    line.setAttribute('x2', to[0]);
+    line.setAttribute('y2', to[1]);
+    line.setAttribute('stroke-width', '1.75');
+    line.setAttribute('stroke-linecap', 'round');
+    line.setAttribute('stroke', 'currentColor');
+    line.style.color = 'var(--accent)';
+    line.style.opacity = String(HEAD_OPACITY);
+    line.style.strokeDasharray = SEG + ' ' + SEG;
+    line.style.strokeDashoffset = String(SEG);
+    trailGroup.appendChild(line);
+    // Flush so the draw-in transition starts from the hidden state.
+    void line.getBoundingClientRect();
+    line.style.transition = 'stroke-dashoffset ' + STEP_MS + 'ms ' + EASE +
+                            ', opacity ' + STEP_MS + 'ms linear';
+    line.style.strokeDashoffset = '0';
+
+    lines.push(line);
+    for (var i = 0; i < lines.length; i++) {
+      lines[i].style.opacity = String(agedOpacity(lines.length - 1 - i));
+    }
+    while (lines.length > TRAIL) {
+      var old = lines.shift();
+      trailGroup.removeChild(old);
+    }
+
+    // The static markup trail ages out alongside the animated lines.
+    if (staticPath.style.display !== 'none') {
+      var staticAge = step - START_STEP;
+      if (staticAge >= TRAIL) {
+        staticPath.style.display = 'none';
+      } else {
+        staticPath.style.opacity = String(agedOpacity(staticAge));
+      }
+    }
+
     placeKnight(step);
     timer = setTimeout(advance, STEP_MS + PAUSE_MS);
   }
@@ -132,9 +185,11 @@
   reduceMotion.addEventListener('change', function (e) {
     if (!e.matches) return;
     clearTimeout(timer);
-    path.style.transition = 'none';
+    trailGroup.remove();
     knight.style.transition = 'none';
-    path.style.strokeDashoffset = '804.98';
     knight.style.transform = '';
+    staticPath.style.transition = 'none';
+    staticPath.style.display = '';
+    staticPath.style.opacity = '';
   });
 })();

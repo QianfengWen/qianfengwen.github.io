@@ -346,10 +346,7 @@ p {
 }
 
 .tour-grid { fill: var(--frame); }
-.tour-path {
-  stroke: var(--accent);
-  opacity: 0.85;
-}
+.tour-path { stroke: var(--accent); }
 .tour-knight { fill: var(--accent); }
 
 .portrait figcaption {
@@ -700,6 +697,7 @@ p {
   .portrait {
     order: -1;
     max-width: 15rem;
+    margin-inline: auto;
   }
 
   .about-grid {
