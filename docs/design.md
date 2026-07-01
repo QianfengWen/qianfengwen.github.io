@@ -88,10 +88,31 @@ Single page, anchored sections, max width 1080px, text measure ~68ch.
 ```
 
 Publications are grouped by year (2026 / 2025 / 2024), newest first, all ten shown;
-selected entries get no special treatment in v1 — the list is short enough to read whole.
+selected entries get no special treatment in v1 — the list is short enough to read whole,
+and a duplicated "selected" block over a ten-entry list would mostly repeat it.
 Author names render "Qianfeng Wen" in a heavier weight; asterisks mark equal contribution
 with a legend under the section title. Venue chips use friendly full names ("EMNLP 2025
-Main Conference", "Under review at COLM 2026"), never raw abbreviation soup.
+Main Conference", "Under review at COLM 2026"), never raw abbreviation soup; orals get
+an accent-tinted flag chip.
+
+Each entry carries a first-page thumbnail (webp, 400×566, rendered from the paper PDF)
+linked to the paper — per a survey of twelve professional researcher sites, teaser
+thumbnails are the single strongest upgrade over a text-only list. The one paper without
+a public PDF (IEEE SSRR) gets a hand-drawn MCTS-tree card in the site's design language
+rather than a fake page. Every entry also exposes official BibTeX (arXiv / ACL Anthology
+exports; a minimal constructed entry for the IEEE paper) in a native `<details>`
+accordion — no JavaScript involved.
+
+### Survey reconciliation (July 2026)
+
+A parallel survey of well-regarded researcher sites (Barron, Karpathy, Weng, Olah,
+Liang, Finn, Chen, Rush, Min, and strong PhD-student sites) confirmed the core choices:
+info-dense above-the-fold hero (no splash), single column near 700–900px text measure,
+warm off-white + near-black + one accent, intentional non-default type pairing, dark
+mode, text-label social links, no al-folio tells (circular photo, icon rows, citation
+badges). Adopted from the survey: per-paper thumbnails, BibTeX per entry, accent oral
+flags. Consciously departed: no duplicated "selected publications" block (list is only
+ten entries), and no hover GIF swaps (no animated teasers exist yet; slot fits later).
 
 ## Engineering constraints
 

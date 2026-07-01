@@ -41,10 +41,25 @@ Everything is plain HTML in `index.html`; each section is marked with a
 - **News**: copy an existing `<li>` inside `.news-list` and edit the date and text.
   Keep newest first.
 - **Publications**: copy a `<li class="pub">` block inside the right year group
-  (`.pub-year`) and edit the title, link, authors, venue chip, and links. Bold
-  yourself with `<span class="me">Qianfeng Wen</span>`; mark equal contribution
-  with `*` after the closing tag. Use `class="venue"` for published venues and
-  `class="venue preprint"` for preprints and papers under review.
+  (`.pub-year`) and edit the thumbnail, title, link, authors, venue chip, links,
+  and BibTeX. Bold yourself with `<span class="me">Qianfeng Wen</span>`; mark equal
+  contribution with `*` after the closing tag. Use `class="venue"` for published
+  venues, `class="venue preprint"` for preprints and papers under review, and add
+  `<span class="venue-flag">Oral</span>` for orals, best-paper awards, and similar.
+- **Publication thumbnails**: each entry shows `assets/img/pubs/<slug>.webp`, a
+  render of the paper's first page (400×566). To generate one from a new PDF:
+
+  ```sh
+  python3 -c "
+  import fitz
+  from PIL import Image
+  doc = fitz.open('paper.pdf'); page = doc[0]
+  pix = page.get_pixmap(matrix=fitz.Matrix(400/page.rect.width, 400/page.rect.width), alpha=False)
+  Image.frombytes('RGB', (pix.width, pix.height), pix.samples).save('assets/img/pubs/slug.webp', 'WEBP', quality=82)"
+  ```
+
+- **BibTeX**: paste the official entry (arXiv's "Export BibTeX" or the ACL
+  Anthology `.bib`) into the `<pre>` inside each entry's `<details class="bibtex">`.
 - **CV**: replace `assets/Qianfeng_Wen_CV.pdf` with the new file (same name, no
   HTML edits needed), and update the "Last updated" line in the footer.
 
