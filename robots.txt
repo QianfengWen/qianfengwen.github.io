@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qianfengwen.github.io/sitemap.xml

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qianfeng Wen — University of Toronto</title>
+  <meta name="description" content="Qianfeng Wen is a computer science researcher at the University of Toronto studying how large language models reason: evaluation and training in grounded domains like chess, retrieval and recommendation, and the safety of recommendation agents.">
+  <link rel="canonical" href="https://qianfengwen.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Qianfeng Wen — University of Toronto">
+  <meta property="og:description" content="Research on LLM reasoning and evaluation, retrieval and recommendation, and trustworthy recommendation agents.">
+  <meta property="og:url" content="https://qianfengwen.github.io/">
+  <meta property="og:image" content="https://qianfengwen.github.io/assets/img/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    // Set theme before first paint to avoid a flash of the wrong scheme.
+    (function () {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Qianfeng Wen",
+    "email": "mailto:qianfengwen@gmail.com",
+    "url": "https://qianfengwen.github.io/",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Toronto"
+    },
+    "jobTitle": "Graduate researcher",
+    "knowsAbout": ["Large language models", "Natural language processing", "Information retrieval", "Recommender systems"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=auhnI1MAAAAJ",
+      "https://github.com/QianfengWen/",
+      "https://linkedin.com/in/qianfeng-wen-23a127290/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="visually-hidden" href="#about">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Qianfeng Wen, back to top">
+        <svg class="mark" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 19 L7 7 L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="19" r="2.1" fill="currentColor"/>
+          <circle cx="17" cy="7" r="2.1" fill="currentColor"/>
+        </svg>
+        Qianfeng Wen
+      </a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-text">
+          <p class="eyebrow">Computer Science &middot; University of Toronto</p>
+          <h1>Qianfeng Wen</h1>
+          <p class="lede">
+            I study how large language models reason &mdash; how to <em>measure</em> it in grounded
+            domains like chess, and how to <em>train</em> models that retrieve, plan, and refine
+            their own thinking. Incoming MSc student with the
+            <a href="https://csslab.cs.toronto.edu/">Computational Social Science Lab</a>,
+            supervised by Ashton Anderson.
+          </p>
+          <div class="contact-row">
+            <a class="primary" href="assets/Qianfeng_Wen_CV.pdf">Download CV</a>
+            <a href="mailto:qianfengwen@gmail.com">Email</a>
+            <a href="https://scholar.google.com/citations?user=auhnI1MAAAAJ">Google Scholar</a>
+            <a href="https://github.com/QianfengWen/">GitHub</a>
+            <a href="https://linkedin.com/in/qianfeng-wen-23a127290/">LinkedIn</a>
+          </div>
+        </div>
+
+        <!--
+          Portrait slot. To use a real photo, replace the <svg> below with:
+            <img src="assets/img/portrait.jpg" alt="Portrait of Qianfeng Wen">
+          and delete the <figcaption>. The frame handles sizing.
+        -->
+        <figure class="portrait">
+          <div class="portrait-frame">
+            <svg id="knight-tour" viewBox="0 0 320 320" role="img"
+                 aria-label="A knight&rsquo;s tour traced on an eight by eight grid of points">
+              <g class="tour-grid" id="tour-grid"></g>
+              <path class="tour-path" id="tour-path"
+                    d="M140 140 L60 180 L20 260 L100 300 L60 220 L20 300 L100 260 L180 300 L260 260 L300 180 L260 100 L300 20 L220 60 L140 20 L60 60 L20 140 L100 100 L20 60 L100 20 L180 60 L260 20 L300 100 L220 140 L260 60 L180 20 L140 100 L60 140 L20 220 L60 300 L140 260 L220 300 L300 260 L260 180 L180 220 L140 300 L100 220 L20 180 L60 260 L100 180 L60 100 L20 20 L100 60 L20 100 L60 20 L140 60 L220 20 L300 60 L220 100 L300 140 L260 220 L300 300 L220 260 L180 180 L100 140 L140 220 L180 140 L220 220 L140 180 L180 100 L260 140 L300 220 L260 300 L180 260 L220 180 L140 140"
+                    fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-dasharray="804.98 4919.35" stroke-dashoffset="804.98"/>
+              <circle class="tour-knight" id="tour-knight" cx="140" cy="140" r="5"/>
+            </svg>
+          </div>
+          <figcaption>A closed knight&rsquo;s tour</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= About ================= -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>About</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Chess is my favourite laboratory for studying reasoning. With collaborators in the
+              Computational Social Science Lab I built
+              <a href="https://arxiv.org/abs/2510.23948">ChessQA</a>, a benchmark for chess
+              understanding in language models, distilled master-level play into
+              <a href="https://arxiv.org/abs/2603.20510">grounded chess reasoning</a>, and developed
+              <a href="https://arxiv.org/abs/2604.01591">ThinkTwice</a>, which jointly optimizes
+              models for reasoning and self-refinement.
+            </p>
+            <p>
+              Before that I spent two years in Scott Sanner&rsquo;s Data-Driven Decision Making Lab
+              working on retrieval and natural-language recommendation: elaborative
+              <a href="https://arxiv.org/abs/2510.02656">query reformulation</a>, Gaussian-process
+              <a href="https://arxiv.org/abs/2510.22023">item scoring with LLM relevance judgments</a>,
+              and manifold-aware metrics for
+              <a href="https://arxiv.org/abs/2509.13562">dense passage retrieval</a> (EMNLP 2025).
+              At Air Canada I put some of this into practice and released TravelDest, the first
+              benchmark dataset for travel search. I also study where these systems break:
+              <a href="https://qianfengwen.github.io/SafeGEO/">SafeGEO</a> examines how generative
+              engine optimization can manipulate recommendation agents.
+            </p>
+            <p>
+              Earlier I worked on motion planning for autonomous driving at Bosch. Outside the lab
+              I am co-founder and CTO of ZBot Technology, building an export-oriented AI agent
+              system.
+            </p>
+          </div>
+          <aside class="about-aside" aria-label="At a glance">
+            <div>
+              <h3>Currently</h3>
+              <ul>
+                <li>MSc in Computer Science</li>
+                <li>University of Toronto</li>
+                <li>CSS Lab &middot; Ashton Anderson</li>
+                <li>Vector Scholar in AI</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Interests</h3>
+              <ul>
+                <li>LLM reasoning &amp; evaluation</li>
+                <li>Retrieval &amp; recommendation</li>
+                <li>Trustworthy agents</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= News ================= -->
+    <section class="section" id="news">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>News</h2>
+        </div>
+        <ul class="news-list">
+          <li>
+            <time datetime="2026-09">Sep 2026</time>
+            <p>Starting my MSc in Computer Science at the University of Toronto, supervised by Ashton Anderson.</p>
+          </li>
+          <li>
+            <time datetime="2026-06">Jun 2026</time>
+            <p><a href="https://arxiv.org/abs/2606.28356">SafeGEO</a> is on arXiv: understanding generative engine optimization risks in recommendation agents, with a <a href="https://qianfengwen.github.io/SafeGEO/">project page</a>.</p>
+          </li>
+          <li>
+            <time datetime="2026-06">Jun 2026</time>
+            <p>Completed my BSc in Computer Science at the University of Toronto (specialist, focus on AI).</p>
+          </li>
+          <li>
+            <time datetime="2026">2026</time>
+            <p>Awarded the Vector Scholarship in Artificial Intelligence by the Vector Institute.</p>
+          </li>
+          <li>
+            <time datetime="2026">2026</time>
+            <p>Our paper on <a href="https://arxiv.org/abs/2510.22023">Gaussian-process item scoring with LLM relevance judgments</a> was accepted to Findings of ACL 2026.</p>
+          </li>
+          <li>
+            <time datetime="2025-08">Aug 2025</time>
+            <p><a href="https://arxiv.org/abs/2509.13562">MA-DPR</a>, our manifold-aware distance metric for dense passage retrieval, was accepted to the EMNLP 2025 main conference.</p>
+          </li>
+          <li>
+            <time datetime="2025">2025</time>
+            <p>Received the Research Award of the Department of Computer Science, University of Toronto.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= Publications ================= -->
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Publications</h2>
+          <p class="note">* denotes equal contribution</p>
+        </div>
+
+        <div class="pub-year">
+          <h3>2026</h3>
+          <ol class="pub-list">
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2606.28356">SafeGEO: Understanding Generative Engine Optimization Risks in Recommendation Agents</a></h4>
+              <p class="pub-authors"><span class="me">Qianfeng Wen</span>*, Yifan Simon Liu*, Xin Liu*, Difan Jiao, Blair Yang, Junda Wu, Zhenwei Tang</p>
+              <div class="pub-meta">
+                <span class="venue preprint">arXiv preprint</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2606.28356">Paper</a>
+                  <a href="https://qianfengwen.github.io/SafeGEO/">Project page</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2604.01591">ThinkTwice: Jointly Optimizing Large Language Models for Reasoning and Self-Refinement</a></h4>
+              <p class="pub-authors">Difan Jiao*, <span class="me">Qianfeng Wen</span>*, Blair Yang, Zhenwei Tang, Ashton Anderson</p>
+              <div class="pub-meta">
+                <span class="venue preprint">Under review &middot; COLM 2026</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2604.01591">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2603.20510">Grounded Chess Reasoning in Language Models via Master Distillation</a></h4>
+              <p class="pub-authors">Zhenwei Tang, <span class="me">Qianfeng Wen</span>, Seth Grief-Albert, Yahya Elgabra, Blair Yang, Honghua Dong, Ashton Anderson</p>
+              <div class="pub-meta">
+                <span class="venue preprint">Under review &middot; COLM 2026</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2603.20510">Paper</a>
+                </span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="pub-year">
+          <h3>2025</h3>
+          <ol class="pub-list">
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2510.22023">Natural Language Recommendation via Multimodal Item Scoring Using Gaussian Process Regression with LLM Relevance Judgments</a></h4>
+              <p class="pub-authors">Yifan Liu*, <span class="me">Qianfeng Wen</span>*, Jiazhou Liang*, Mark Zhao*, Justin Cui, Anton Korikov, Armin Toroghi, Junyoung Kim, Scott Sanner</p>
+              <div class="pub-meta">
+                <span class="venue">ACL 2026 &middot; Findings</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2510.22023">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2510.23948">ChessQA: Evaluating Large Language Models for Chess Understanding</a></h4>
+              <p class="pub-authors"><span class="me">Qianfeng Wen</span>, Zhenwei Tang, Ashton Anderson</p>
+              <div class="pub-meta">
+                <span class="venue preprint">Under review &middot; COLM 2026</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2510.23948">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2509.13562">MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval</a></h4>
+              <p class="pub-authors">Yifan Liu*, <span class="me">Qianfeng Wen</span>*, Mark Zhao*, Jiazhou Liang, Scott Sanner</p>
+              <div class="pub-meta">
+                <span class="venue">EMNLP 2025 &middot; Main Conference</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2509.13562">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2510.02656">A Simple but Effective Elaborative Query Reformulation Approach for Natural Language Recommendation</a></h4>
+              <p class="pub-authors"><span class="me">Qianfeng Wen</span>*, Yifan Liu*, Justin Cui*, Joshua Zhang, Anton Korikov, George-Kirollos Saad, Scott Sanner</p>
+              <div class="pub-meta">
+                <span class="venue preprint">arXiv preprint</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2510.02656">Paper</a>
+                </span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="pub-year">
+          <h3>2024</h3>
+          <ol class="pub-list">
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://aclanthology.org/2025.loreslm-1.14/">A Comparative Study of Static and Contextual Embeddings for Analyzing Semantic Changes in Medieval Latin Charters</a></h4>
+              <p class="pub-authors">Yifan Liu, Gelila Tilahun, Xinxiang Gao, <span class="me">Qianfeng Wen</span>, Michael Gervers</p>
+              <div class="pub-meta">
+                <span class="venue">COLING 2025 &middot; LoResLM Workshop &middot; Oral</span>
+                <span class="pub-links">
+                  <a href="https://aclanthology.org/2025.loreslm-1.14/">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://arxiv.org/abs/2410.01598">Elaborative Subtopic Query Reformulation for Broad and Indirect Queries in Travel Destination Recommendation</a></h4>
+              <p class="pub-authors"><span class="me">Qianfeng Wen</span>*, Yifan Liu*, Joshua Zhang, George Saad, Anton Korikov, Yury Sambale, Scott Sanner</p>
+              <div class="pub-meta">
+                <span class="venue">RecSys 2024 &middot; ROEGEN Workshop</span>
+                <span class="pub-links">
+                  <a href="https://arxiv.org/abs/2410.01598">Paper</a>
+                </span>
+              </div>
+            </li>
+            <li class="pub">
+              <h4 class="pub-title"><a href="https://ieeexplore.ieee.org/abstract/document/10770028">Monte-Carlo Tree Search for Behavior Planning in Autonomous Driving</a></h4>
+              <p class="pub-authors"><span class="me">Qianfeng Wen</span>, Zhongyi Gong, Lifeng Zhou, Zhongshun Zhang</p>
+              <div class="pub-meta">
+                <span class="venue">IEEE SSRR 2024 &middot; Oral</span>
+                <span class="pub-links">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/10770028">Paper</a>
+                  <a href="https://github.com/zhongshun/MCTS_for_Behavior_Planning">Code</a>
+                </span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Experience ================= -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Experience</h2>
+        </div>
+
+        <div class="xp-group">
+          <h3>Education</h3>
+          <article class="xp">
+            <time>Sep 2026 &ndash; present</time>
+            <div>
+              <h4>University of Toronto</h4>
+              <span class="role">MSc in Computer Science, supervised by Ashton Anderson</span>
+            </div>
+          </article>
+          <article class="xp">
+            <time>Sep 2022 &ndash; Jun 2026</time>
+            <div>
+              <h4>University of Toronto</h4>
+              <span class="role">BSc, Computer Science Specialist with a focus on AI &middot; GPA 3.91 / 4.0</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="xp-group">
+          <h3>Research</h3>
+          <article class="xp">
+            <time>May 2025 &ndash; present</time>
+            <div>
+              <h4>Computational Social Science Lab, University of Toronto</h4>
+              <span class="role">Researcher, supervised by Ashton Anderson</span>
+              <ul>
+                <li>Built ChessQA, a benchmark evaluating language models on tactics, strategy, notation, and explanation quality.</li>
+                <li>Training chess-specialized models with supervised fine-tuning and reinforcement learning for reasoning and move justification.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="xp">
+            <time>May 2024 &ndash; Mar 2026</time>
+            <div>
+              <h4>Data-Driven Decision Making Lab, University of Toronto</h4>
+              <span class="role">Researcher, supervised by Scott Sanner</span>
+              <ul>
+                <li>Built retrieval-augmented QA pipelines combining sparse and dense retrieval with LLM-driven query reformulation and user-intent modeling.</li>
+                <li>Proposed Manifold Distance, a training-agnostic metric that outperforms cosine and dot-product measures on dense passage retrieval benchmarks.</li>
+                <li>Introduced GPR-LLM, Gaussian Process Regression over LLM relevance judgments, exceeding dense retrieval, cross-encoder, and pointwise LLM rerankers across four datasets.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="xp">
+            <time>Apr 2024 &ndash; Jan 2026</time>
+            <div>
+              <h4>The Matter Lab, University of Toronto</h4>
+              <span class="role">Researcher, supervised by Al&aacute;n Aspuru-Guzik, Haozhe Huang, and Pan Chen</span>
+              <ul>
+                <li>Studied multi-agent debate, chain-of-thought, and tree-of-thought methods for LLM logical reasoning, and whether models exhibit schema-based learning.</li>
+                <li>Investigated compositional training methods for diffusion models on 2D-ARC problems.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="xp-group">
+          <h3>Industry</h3>
+          <article class="xp">
+            <time>Oct 2025 &ndash; present</time>
+            <div>
+              <h4>ZBot Technology</h4>
+              <span class="role">Co-founder &amp; CTO</span>
+              <ul>
+                <li>Leading development of an export-oriented AI agent system.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="xp">
+            <time>Jun 2024 &ndash; Aug 2024</time>
+            <div>
+              <h4>Air Canada</h4>
+              <span class="role">AI Engineer Intern, in collaboration with the Data-Driven Decision Making Lab</span>
+              <ul>
+                <li>Led development of a travel recommender that adapts to free-form queries, and released TravelDest, the first benchmark dataset for travel search.</li>
+                <li>Built an LLM query-reformulation and dense-retrieval pipeline, improving R-precision by 12% over baseline.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="xp">
+            <time>May 2023 &ndash; Aug 2023</time>
+            <div>
+              <h4>Bosch</h4>
+              <span class="role">Autonomous Driving Intern, Shanghai</span>
+              <ul>
+                <li>Worked on motion planning for Bosch&rsquo;s Wave3 autonomous driving program.</li>
+                <li>Designed a Monte Carlo tree search decision-making framework reaching a 98% success rate with planning latency under 0.2 s on project benchmarks.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Awards & Service ================= -->
+    <section class="section" id="awards">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Awards &amp; Service</h2>
+        </div>
+        <ul class="award-list">
+          <li>
+            <span class="years">2026</span>
+            <p>Vector Scholarship in Artificial Intelligence <span class="grantor">&mdash; Vector Institute</span></p>
+          </li>
+          <li>
+            <span class="years">2025</span>
+            <p>Research Award <span class="grantor">&mdash; Department of Computer Science, University of Toronto</span></p>
+          </li>
+          <li>
+            <span class="years">2025</span>
+            <p>Reviewer <span class="grantor">&mdash; IEEE International Conference on Robotics and Automation (ICRA)</span></p>
+          </li>
+          <li>
+            <span class="years">2024 &ndash; 2025</span>
+            <p>Chancellor&rsquo;s Scholarship <span class="grantor">&mdash; Trinity College, University of Toronto</span></p>
+          </li>
+          <li>
+            <span class="years">2023 &ndash; 2025</span>
+            <p>Dean&rsquo;s List Scholar <span class="grantor">&mdash; University of Toronto</span></p>
+          </li>
+          <li>
+            <span class="years">2024</span>
+            <p>Educational Training Stipend <span class="grantor">&mdash; Department of Mechanical &amp; Industrial Engineering, University of Toronto</span></p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        Qianfeng Wen &middot; <a href="mailto:qianfengwen@gmail.com">qianfengwen@gmail.com</a><br>
+        <a href="https://scholar.google.com/citations?user=auhnI1MAAAAJ">Google Scholar</a> &middot;
+        <a href="https://github.com/QianfengWen/">GitHub</a> &middot;
+        <a href="https://linkedin.com/in/qianfeng-wen-23a127290/">LinkedIn</a> &middot;
+        <a href="assets/Qianfeng_Wen_CV.pdf">CV</a>
+      </p>
+      <p>
+        Last updated July 2026<br>
+        Set in Schibsted Grotesk, STIX Two Text &amp; Spline Sans Mono. Hand-built, no framework.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
