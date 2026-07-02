@@ -51,17 +51,23 @@ convert ig_*.png -filter Lanczos -resize 600x400 -quality 86 assets/img/pubs/<sl
   from the agent an arrow leads to a ranked podium of three product bars where the
   buff-tinted product stands first, marked with a small warning triangle. Exactly
   one small label: GEO, on the hooked document.
-- **gpr-llm** — Left to right: a tall stack of many small passage cards, with three
-  of them highlighted jade and lifted on thin lines up to a small LLM chip that
-  marks each with a score dot; the scored dots feed into a smooth hill-shaped
-  Gaussian surface drawn as a fine contour mesh with a soft buff confidence band;
-  from the surface a bold arrow leads to a neat ranked list of item bars. Exactly
-  one small label: GPR, beside the surface.
-- **ma-dpr** — An S-shaped ribbon made of many small dots forming a point cloud,
-  with faint short edges joining neighboring dots into a graph; a small star marks a
-  query at one end of the S and a bold dot marks a passage midway along it; two
-  routes connect them: a straight dashed chord cutting across the empty gap, and a
-  solid path that hops dot to dot following the curve of the S. No text anywhere.
+- **gpr-llm** — Three calm stages, left to right: first a neat single column of
+  eight small passage cards, three of them tinted jade and connected by thin lines
+  up to one small LLM chip that marks each with a score dot; second, dominating
+  the center, a smooth hill-shaped Gaussian surface drawn as an elegant fine
+  contour mesh with a soft buff confidence band beneath its curve; third, a bold
+  arrow leading to a short ranked list of five horizontal bars, the top bar filled
+  jade. Exactly one small label: GPR, beside the surface. Generous calm spacing
+  between the three stages.
+- **ma-dpr** — A graceful S-shaped ribbon of small dots forming a point cloud,
+  joined into a sparse graph by faint short edges; at the lower end of the S a
+  clear five-pointed star marks the query, the star filled muted jade with a
+  bottle-green outline; midway along the S one large jade-filled dot marks a
+  passage; two strongly contrasting routes connect them: a thin straight dashed
+  chord cutting across the empty gap, and a bold solid jade path that hops dot to
+  dot following the ribbon's curve; a small arrowhead on each route. No text
+  anywhere. (Add "strictly no yellow, no gold" to the style line; the model likes
+  gilding the star.)
 - **eqr** — Left to right: one small query bubble, arrows elaborating it into a fan
   of six smaller subtopic bubbles, whose thin lines converge onto a vertical ranked
   list of five horizontal item bars; the top bar is filled jade, the rest stay
