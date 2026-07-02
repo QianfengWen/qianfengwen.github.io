@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Qianfeng Wen — University of Toronto</title>
+  <title>Qianfeng Wen &middot; University of Toronto</title>
   <meta name="description" content="Qianfeng Wen is a computer science researcher at the University of Toronto working on LLM post-training (reinforcement learning, distillation, self-refinement), language-model agents, and LLMs for recommendation and information retrieval.">
   <link rel="canonical" href="https://qianfengwen.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/main.css">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Qianfeng Wen — University of Toronto">
+  <meta property="og:title" content="Qianfeng Wen · University of Toronto">
   <meta property="og:description" content="LLM post-training, language-model agents, and LLMs for recommendation and information retrieval.">
   <meta property="og:url" content="https://qianfengwen.github.io/">
   <meta property="og:image" content="https://qianfengwen.github.io/assets/img/og-card.png">
@@ -90,12 +90,10 @@
           <p class="eyebrow">Computer Science &middot; University of Toronto</p>
           <h1>Qianfeng Wen</h1>
           <p class="lede">
-            I work on how large language models <em>learn</em> after pretraining and how they
-            <em>act</em> as agents &mdash; post-training with reinforcement learning and
-            distillation, and language models for recommendation and retrieval. Incoming MSc
-            student with the
-            <a href="https://csslab.cs.toronto.edu/">Computational Social Science Lab</a>,
-            supervised by Ashton Anderson.
+            I work on what happens to language models after pretraining: how reinforcement
+            learning and distillation shape their reasoning, and how they behave as agents.
+            This fall I start my MSc with Ashton Anderson in the
+            <a href="https://csslab.cs.toronto.edu/">Computational Social Science Lab</a>.
           </p>
           <ul class="topic-row" aria-label="Research topics">
             <li>LLM Post-training</li>
@@ -128,32 +126,10 @@
           </div>
         </div>
 
-        <!--
-          Portrait slot. To use a real photo, replace the <svg> below with:
-            <img src="assets/img/portrait.jpg" alt="Portrait of Qianfeng Wen">
-          and delete the <figcaption>. The frame handles sizing.
-        -->
         <figure class="portrait">
           <div class="portrait-frame">
-            <svg id="knight-tour" viewBox="0 0 320 320" role="img"
-                 aria-label="An agent&rsquo;s trail traced across a grid world">
-              <g class="tour-grid" id="tour-grid"></g>
-              <!-- The tour's first nine moves, newest brightest, oldest faintest -->
-              <g class="tour-path" id="tour-path" fill="none" stroke-width="1.75" stroke-linecap="round">
-                <line x1="140" y1="140" x2="60" y2="180" opacity="0.09"/>
-                <line x1="60" y1="180" x2="20" y2="260" opacity="0.19"/>
-                <line x1="20" y1="260" x2="100" y2="300" opacity="0.28"/>
-                <line x1="100" y1="300" x2="60" y2="220" opacity="0.38"/>
-                <line x1="60" y1="220" x2="20" y2="300" opacity="0.47"/>
-                <line x1="20" y1="300" x2="100" y2="260" opacity="0.57"/>
-                <line x1="100" y1="260" x2="180" y2="300" opacity="0.66"/>
-                <line x1="180" y1="300" x2="260" y2="260" opacity="0.76"/>
-                <line x1="260" y1="260" x2="300" y2="180" opacity="0.85"/>
-              </g>
-              <circle class="tour-knight" id="tour-knight" cx="300" cy="180" r="5"/>
-            </svg>
+            <img src="assets/img/portrait.jpg" alt="Qianfeng Wen" width="819" height="1024">
           </div>
-          <figcaption>An agent, exploring</figcaption>
         </figure>
       </div>
     </section>
@@ -167,31 +143,18 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              My current focus is post-training: how far reinforcement learning and distillation
-              can push reasoning in language models. With the Computational Social Science Lab I
-              co-developed <a href="https://arxiv.org/abs/2604.01591">ThinkTwice</a>, which jointly
-              optimizes models for reasoning and self-refinement, and helped distill master-level
-              play into <a href="https://arxiv.org/abs/2603.20510">grounded reasoning</a> &mdash;
-              using chess as a fully verifiable domain for asking whether models actually reason,
-              which is also why we built the
-              <a href="https://arxiv.org/abs/2510.23948">ChessQA</a> benchmark.
+              I&rsquo;m an incoming MSc student in computer science at the University of Toronto,
+              where I work with <a href="https://www.cs.toronto.edu/~ashton/">Ashton Anderson</a>
+              on post-training for reasoning: reinforcement learning, on-policy distillation,
+              and models that catch their own mistakes. I&rsquo;m also interested in LLM agents
+              and in language models for recommendation and search.
             </p>
             <p>
-              A second thread is language models for recommendation and information retrieval,
-              from two years with Scott Sanner&rsquo;s Data-Driven Decision Making Lab: elaborative
-              <a href="https://arxiv.org/abs/2510.02656">query reformulation</a>, Gaussian-process
-              <a href="https://arxiv.org/abs/2510.22023">item scoring with LLM relevance judgments</a>
-              (Findings of ACL 2026), and manifold-aware metrics for
-              <a href="https://arxiv.org/abs/2509.13562">dense passage retrieval</a> (EMNLP 2025).
-              At Air Canada I put some of this into practice and released TravelDest, the first
-              benchmark dataset for travel search.
-            </p>
-            <p>
-              Agents tie the two together: systems that retrieve, decide, and act.
-              <a href="https://qianfengwen.github.io/SafeGEO/">SafeGEO</a> studies how generative
-              engine optimization can manipulate recommendation agents, and at ZBot Technology,
-              which I co-founded, I lead development of an export-oriented AI agent system.
-              Earlier I worked on decision-making for autonomous driving at Bosch.
+              Before this I spent two years on recommendation and retrieval in
+              <a href="https://d3m.mie.utoronto.ca/">Scott Sanner</a>&rsquo;s lab, studied LLM
+              reasoning in <a href="https://www.matter.toronto.edu/">Al&aacute;n
+              Aspuru-Guzik</a>&rsquo;s Matter Lab, and did stints at Air Canada and Bosch.
+              I also co-founded ZBot Technology, where we build AI agents for exporters.
             </p>
           </div>
           <aside class="about-aside" aria-label="At a glance">
@@ -232,9 +195,10 @@
               <circle class="fig-dot" cx="242" cy="27" r="4.5"/>
             </svg>
             <h3>Post-training for reasoning</h3>
-            <p>How far can reinforcement learning and on-policy distillation push reasoning in
-               language models? Joint optimization for reasoning and self-refinement, distilling
-               expert play into grounded reasoning, and benchmarks that make progress measurable.</p>
+            <p>How far can reinforcement learning and on-policy distillation push reasoning?
+               ThinkTwice trains models to draft an answer and then repair it. Chess is a
+               small test bench for the same question: every claim a model makes there can
+               be checked exactly.</p>
             <p class="thread-papers">
               <a href="#pub-thinktwice">ThinkTwice</a>
               <a href="#pub-chess-distill">Master Distillation</a>
@@ -255,9 +219,10 @@
               <path class="fig-line" d="M96 82 l-1.5 -6.5 6.5 1"/>
             </svg>
             <h3>Language-model agents</h3>
-            <p>Agents retrieve, decide, and act &mdash; and can be manipulated. SafeGEO maps how
-               generative engine optimization distorts what recommendation agents surface, and at
-               ZBot Technology I build agent systems that ship.</p>
+            <p>An agent that reads the web and acts on your behalf can be steered by whoever
+               wrote what it reads. SafeGEO measures how generative engine optimization distorts
+               what recommendation agents suggest. Building agents at ZBot Technology keeps this
+               research honest.</p>
             <p class="thread-papers">
               <a href="#pub-safegeo">SafeGEO</a>
             </p>
@@ -273,8 +238,9 @@
             </svg>
             <h3>Recommendation &amp; retrieval</h3>
             <p>Language models change how people search for things they cannot name yet.
-               Elaborative query reformulation, Gaussian-process item scoring with LLM relevance
-               judgments, and manifold-aware metrics for dense passage retrieval.</p>
+               EQR expands a vague query into the subtopics it implies, GPR-LLM scores items
+               with Gaussian processes over LLM relevance judgments, and MA-DPR rethinks what
+               &ldquo;close&rdquo; means in embedding space.</p>
             <p class="thread-papers">
               <a href="#pub-eqr">EQR</a>
               <a href="#pub-gpr-llm">GPR-LLM</a>
@@ -647,7 +613,7 @@
             <time>Sep 2022 &ndash; Jun 2026</time>
             <div>
               <h4>University of Toronto</h4>
-              <span class="role">BSc, Computer Science Specialist with a focus on AI &middot; GPA 3.91 / 4.0</span>
+              <span class="role">BSc, Computer Science Specialist with a focus on AI</span>
             </div>
           </article>
         </div>
@@ -659,10 +625,12 @@
             <div>
               <h4>Computational Social Science Lab, University of Toronto</h4>
               <span class="role">Researcher, supervised by Ashton Anderson</span>
-              <ul>
-                <li>Built ChessQA, a benchmark evaluating language models on tactics, strategy, notation, and explanation quality.</li>
-                <li>Training chess-specialized models with supervised fine-tuning and reinforcement learning for reasoning and move justification.</li>
-              </ul>
+              <p>Post-training for reasoning. I co-developed
+                 <a href="#pub-thinktwice">ThinkTwice</a>, which jointly trains models to
+                 reason and to refine their own answers. We also use chess as a verifiable
+                 test bench: we distill master play into
+                 <a href="#pub-chess-distill">grounded reasoning</a> and measure
+                 understanding with <a href="#pub-chessqa">ChessQA</a>.</p>
             </div>
           </article>
           <article class="xp">
@@ -670,11 +638,13 @@
             <div>
               <h4>Data-Driven Decision Making Lab, University of Toronto</h4>
               <span class="role">Researcher, supervised by Scott Sanner</span>
-              <ul>
-                <li>Built retrieval-augmented QA pipelines combining sparse and dense retrieval with LLM-driven query reformulation and user-intent modeling.</li>
-                <li>Proposed Manifold Distance, a training-agnostic metric that outperforms cosine and dot-product measures on dense passage retrieval benchmarks.</li>
-                <li>Introduced GPR-LLM, Gaussian Process Regression over LLM relevance judgments, exceeding dense retrieval, cross-encoder, and pointwise LLM rerankers across four datasets.</li>
-              </ul>
+              <p>Two years on natural-language recommendation and retrieval. I worked on
+                 <a href="#pub-eqr">elaborative query reformulation</a> for queries that
+                 describe a need without naming an item, on
+                 <a href="#pub-gpr-llm">item scoring with Gaussian processes over LLM
+                 relevance judgments</a> (Findings of ACL 2026), and on
+                 <a href="#pub-ma-dpr">manifold-aware distance metrics for dense passage
+                 retrieval</a> (EMNLP 2025).</p>
             </div>
           </article>
           <article class="xp">
@@ -682,10 +652,9 @@
             <div>
               <h4>The Matter Lab, University of Toronto</h4>
               <span class="role">Researcher, supervised by Al&aacute;n Aspuru-Guzik, Haozhe Huang, and Pan Chen</span>
-              <ul>
-                <li>Studied multi-agent debate, chain-of-thought, and tree-of-thought methods for LLM logical reasoning, and whether models exhibit schema-based learning.</li>
-                <li>Investigated compositional training methods for diffusion models on 2D-ARC problems.</li>
-              </ul>
+              <p>Asked whether language models actually reason. We probed multi-agent debate
+                 and tree-of-thought prompting, and tried compositional training for diffusion
+                 models on ARC-style puzzles.</p>
             </div>
           </article>
         </div>
@@ -697,9 +666,7 @@
             <div>
               <h4>ZBot Technology</h4>
               <span class="role">Co-founder &amp; CTO</span>
-              <ul>
-                <li>Leading development of an export-oriented AI agent system.</li>
-              </ul>
+              <p>We build AI agents for export businesses. I run the technical side.</p>
             </div>
           </article>
           <article class="xp">
@@ -707,10 +674,10 @@
             <div>
               <h4>Air Canada</h4>
               <span class="role">AI Engineer Intern, in collaboration with the Data-Driven Decision Making Lab</span>
-              <ul>
-                <li>Led development of a travel recommender that adapts to free-form queries, and released TravelDest, the first benchmark dataset for travel search.</li>
-                <li>Built an LLM query-reformulation and dense-retrieval pipeline, improving R-precision by 12% over baseline.</li>
-              </ul>
+              <p>Built a travel recommender for people who know the trip they want but not
+                 the place, and released TravelDest, the first benchmark dataset for travel
+                 search. The approach became a <a href="#pub-travel-eqr">RecSys 2024 workshop
+                 paper</a>.</p>
             </div>
           </article>
           <article class="xp">
@@ -718,10 +685,9 @@
             <div>
               <h4>Bosch</h4>
               <span class="role">Autonomous Driving Intern, Shanghai</span>
-              <ul>
-                <li>Worked on motion planning for Bosch&rsquo;s Wave3 autonomous driving program.</li>
-                <li>Designed a Monte Carlo tree search decision-making framework reaching a 98% success rate with planning latency under 0.2 s on project benchmarks.</li>
-              </ul>
+              <p>Motion planning for the Wave3 autonomous driving program. The Monte Carlo
+                 tree search framework I worked on there later became an
+                 <a href="#pub-mcts-driving">IEEE SSRR 2024 paper</a>.</p>
             </div>
           </article>
         </div>
@@ -737,27 +703,27 @@
         <ul class="award-list">
           <li>
             <span class="years">2026 &ndash; 27</span>
-            <p><a href="https://vectorinstitute.ai/programs/scholarship/">Vector Scholarship in Artificial Intelligence</a> <span class="grantor">&mdash; Vector Institute</span></p>
+            <p><a href="https://vectorinstitute.ai/programs/scholarship/">Vector Scholarship in Artificial Intelligence</a> <span class="grantor">&middot; Vector Institute</span></p>
           </li>
           <li>
             <span class="years">2025</span>
-            <p>Research Award <span class="grantor">&mdash; Department of Computer Science, University of Toronto</span></p>
+            <p>Research Award <span class="grantor">&middot; Department of Computer Science, University of Toronto</span></p>
           </li>
           <li>
             <span class="years">2025</span>
-            <p>Reviewer <span class="grantor">&mdash; IEEE International Conference on Robotics and Automation (ICRA)</span></p>
+            <p>Reviewer <span class="grantor">&middot; IEEE International Conference on Robotics and Automation (ICRA)</span></p>
           </li>
           <li>
             <span class="years">2024 &ndash; 2025</span>
-            <p>Chancellor&rsquo;s Scholarship <span class="grantor">&mdash; Trinity College, University of Toronto</span></p>
+            <p>Chancellor&rsquo;s Scholarship <span class="grantor">&middot; Trinity College, University of Toronto</span></p>
           </li>
           <li>
             <span class="years">2023 &ndash; 2025</span>
-            <p>Dean&rsquo;s List Scholar <span class="grantor">&mdash; University of Toronto</span></p>
+            <p>Dean&rsquo;s List Scholar <span class="grantor">&middot; University of Toronto</span></p>
           </li>
           <li>
             <span class="years">2024</span>
-            <p>Educational Training Stipend <span class="grantor">&mdash; Department of Mechanical &amp; Industrial Engineering, University of Toronto</span></p>
+            <p>Educational Training Stipend <span class="grantor">&middot; Department of Mechanical &amp; Industrial Engineering, University of Toronto</span></p>
           </li>
         </ul>
       </div>

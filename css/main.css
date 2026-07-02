@@ -1,5 +1,5 @@
 /* ==========================================================================
-   qianfengwen.github.io — tournament board, journal page
+   qianfengwen.github.io · tournament board, journal page
    Tokens and rationale: docs/design.md
    ========================================================================== */
 
@@ -143,6 +143,27 @@ p {
   border: 0;
 }
 
+/* The skip link surfaces when keyboard focus reaches it. */
+a.visually-hidden:focus-visible {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  overflow: visible;
+  clip: auto;
+  background: var(--accent);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 550;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
 /* ---- Header ------------------------------------------------------------ */
 
 .site-header {
@@ -278,10 +299,6 @@ p {
   max-width: 34rem;
 }
 
-.hero .lede em {
-  font-style: italic;
-}
-
 .topic-row {
   list-style: none;
   display: flex;
@@ -347,7 +364,7 @@ p {
   color: var(--paper);
 }
 
-/* Portrait frame: holds the knight's tour until a real photo replaces it */
+/* Portrait frame */
 
 .portrait {
   margin: 0;
@@ -819,6 +836,12 @@ p {
   font-size: 0.9375rem;
   color: var(--muted);
   margin-top: 0.15rem;
+}
+
+.xp div > p {
+  margin: 0.6rem 0 0;
+  font-size: 0.9782rem;
+  max-width: 38rem;
 }
 
 .xp ul {

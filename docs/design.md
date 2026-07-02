@@ -57,10 +57,11 @@ Dark mode follows `prefers-color-scheme` with a manual toggle persisted to local
 An **agent exploring a grid world**: on an 8×8 dot lattice, a comet trail of the agent's
 last nine moves wanders forever (the trail is a precomputed closed walk, so the animation
 loops seamlessly; a full walk drawn at once reads as a tangle, while the moving window
-always reads as one calm line). It lives in the hero's portrait frame as the placeholder
-until a real photo is added (`assets/img/portrait.jpg`), and it encodes the research in
-one image: an agent taking actions, exploring, improving. The markup ships a static frame
-of the same animation, so no-JS and `prefers-reduced-motion` visitors see a valid still.
+always reads as one calm line). It served as the hero's portrait placeholder until the
+real photo landed there (`assets/img/portrait.jpg`, a high-resolution personal
+headshot). The animation code stays dormant in `js/main.js` and reactivates if an
+`<svg id="knight-tour">` is put back; its language survives in the header mark, favicon,
+and research-thread figures.
 
 ## Figures and icons
 
@@ -88,11 +89,11 @@ Single page, anchored sections, max width 1080px, text measure ~68ch.
 --------------------------------------------------------------------------------
 |  COMPUTER SCIENCE / UNIVERSITY OF TORONTO (mono eyebrow)       +----------+  |
 |  Qianfeng Wen  (display, ~64px)                                | portrait |  |
-|  Positioning statement, serif, inline links                    |  frame / |  |
-|  [topic chips: post-training, OPD, agents, recsys, IR]         |  agent   |  |
-|  [CV (accent)] [Email] [Scholar] [GitHub] [LinkedIn] w/ icons  |  trail   |  |
+|  Positioning statement, serif, inline links                    |  frame:  |  |
+|  [topic chips: post-training, OPD, agents, recsys, IR]         |  photo   |  |
+|  [CV (accent)] [Email] [Scholar] [GitHub] [LinkedIn] w/ icons  |          |  |
 |                                                                +----------+  |
-|  About: three short serif paragraphs + Currently/Previously rail              |
+|  About: two short serif paragraphs + Currently/Previously rail                |
 |  Research: three framed thread panels, SVG figure + blurb + paper links       |
 |  News: mono date | serif entry                                                |
 |  Publications: year rail | teaser image | venue eyebrow / title / authors /   |

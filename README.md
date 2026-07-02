@@ -1,6 +1,6 @@
 # qianfengwen.github.io
 
-Personal research website for Qianfeng Wen. Pure static HTML/CSS/JS — no build step,
+Personal research website for Qianfeng Wen. Pure static HTML/CSS/JS: no build step,
 no framework, no third-party requests (fonts are self-hosted). Design rationale lives
 in [docs/design.md](docs/design.md).
 
@@ -18,20 +18,14 @@ in [docs/design.md](docs/design.md).
 3. In the repository settings, under Pages, confirm the source is `main` / root.
    The site appears at <https://qianfengwen.github.io/> within a minute or two.
 
-## Add a real photo
+## Replace the photo
 
-The hero shows an animated knight's tour until a photo is added. To swap it in:
-
-1. Save your photo as `assets/img/portrait.jpg` (roughly 4:5 portrait crop,
-   800×1000 px or larger).
-2. In `index.html`, find the `<figure class="portrait">` block and replace the
-   `<svg id="knight-tour">…</svg>` element with:
-
-   ```html
-   <img src="assets/img/portrait.jpg" alt="Portrait of Qianfeng Wen">
-   ```
-
-3. Delete the `<figcaption>` line below it.
+The hero photo is `assets/img/portrait.jpg` (819×1024, a 4:5 crop, metadata
+stripped). To swap it: overwrite the file, keep the name, and update the
+`width`/`height` attributes on the hero `<img>` if the dimensions change.
+Aim for a roughly 4:5 portrait crop, 800×1000 px or larger. The knight's-tour
+animation the photo replaced still lives in `js/main.js` and wakes up again if
+an `<svg id="knight-tour">` is ever put back in the frame.
 
 ## Edit content
 

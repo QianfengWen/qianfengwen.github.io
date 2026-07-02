@@ -1,8 +1,8 @@
-/* Progressive enhancement only — the page is complete without JavaScript.
+/* Progressive enhancement only; the page is complete without JavaScript.
    1. Theme toggle (persisted)
    2. Header hairline on scroll
    3. Scroll-spy for section nav
-   4. Knight's tour animation in the hero */
+   4. Knight's tour animation (dormant unless an #knight-tour svg is on the page) */
 
 (function () {
   'use strict';
