@@ -26,8 +26,8 @@ Two materials drive every visual decision:
    subconsciously reads as "a paper," which is the correct register.
 2. **The researcher's notebook.** Deep study-green ink on warm archival paper, with buff
    fills for tags and chips — the palette of ledgers, field notes, and library lamps.
-   Diagrams are drawn in that same ink: the hero's agent trail, the three research-thread
-   figures, and the matched set of illustrated paper teasers.
+   Diagrams are drawn in that same ink: the hero's agent trail and the three
+   research-thread figures.
 
 ## Tokens
 
@@ -68,10 +68,10 @@ and research-thread figures.
 - **Research threads**: three hand-drawn SVG figures in the site ink — a training curve
   (post-training), a model-environment loop (agents), and a query branching into a ranked
   list (recommendation and retrieval).
-- **Paper teasers**: a matched set of flat editorial illustrations, one per paper,
-  generated with gpt-image-2 under a single locked style prompt (bottle-green ink,
-  jade/buff fills, warm paper ground, no text) and reviewed individually. Consistency of
-  the set is the point — mixed styles read as clip art.
+- **Paper thumbnails**: a render of each paper's first page (400×566 webp). An
+  illustrated-teaser set was tried and rolled back by owner decision: this is a
+  researcher profile first, and real first pages read technical and verifiable
+  where illustrations read editorial.
 - **Contact and UI icons**: monoline SVGs drawn in currentColor (download, envelope,
   mortarboard, code brackets, badge), always paired with text labels; no brand glyph
   rows. A small step mark (two dots joined by an L path — one move on the grid) serves
@@ -96,7 +96,7 @@ Single page, anchored sections, max width 1080px, text measure ~68ch.
 |  About: two short serif paragraphs + Currently/Previously rail                |
 |  Research: three framed thread panels, SVG figure + blurb + paper links       |
 |  News: mono date | serif entry                                                |
-|  Publications: year rail | teaser image | venue eyebrow / title / authors /   |
+|  Publications: year rail | first-page thumb | venue eyebrow / title / authors |
 |      links / BibTeX accordion (* equal contribution legend in section head)   |
 |  Experience: Education + Research (3 labs) + Industry (3 roles)               |
 |  Awards & Service: year rail | award, grantor                                 |
@@ -108,14 +108,14 @@ selected entries get no special treatment in v1 — the list is short enough to 
 and a duplicated "selected" block over a ten-entry list would mostly repeat it.
 Author names render "Qianfeng Wen" in a heavier weight; asterisks mark equal contribution
 with a legend under the section title. Venue chips use friendly full names ("EMNLP 2025
-Main Conference", "Under review at COLM 2026"), never raw abbreviation soup; orals get
-an accent-tinted flag chip.
+Main Conference"), never raw abbreviation soup; papers under review say only "Under
+review" (the submission venue is not disclosed); orals get an accent-tinted flag chip.
 
-Each entry carries an illustrated teaser (webp, 600×400, 3:2) linked to the paper — per
-a survey of twelve professional researcher sites, teaser images are the single strongest
-upgrade over a text-only list; a matched illustration set (see Figures and icons) reads
-hand-crafted where mixed styles would read as clip art. Every entry also exposes official
-BibTeX (arXiv / ACL Anthology exports; a minimal constructed entry for the IEEE paper) in
+Each entry carries a first-page thumbnail (webp, 400×566) linked to the paper — per
+a survey of twelve professional researcher sites, per-paper images are the single
+strongest upgrade over a text-only list, and real first pages carry the technical
+register a researcher profile needs. Every entry also exposes official BibTeX
+(arXiv / ACL Anthology exports; a minimal constructed entry for the IEEE paper) in
 a native `<details>` accordion — no JavaScript involved.
 
 ### Survey reconciliation (July 2026)

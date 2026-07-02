@@ -40,16 +40,17 @@ Everything is plain HTML in `index.html`; each section is marked with a
   contribution with `*` after the closing tag. Use `class="venue"` for published
   venues, `class="venue preprint"` for preprints and papers under review, and add
   `<span class="venue-flag">Oral</span>` for orals, best-paper awards, and similar.
-- **Publication teasers**: each entry shows `assets/img/pubs/<slug>.webp`, a 600×400
-  flat illustration of the paper's core idea. The set was generated with gpt-image-2
-  under one locked style prompt so it reads as a matched collection. To add one for a
-  new paper, reuse this style block in the image prompt, describe the paper's idea as
-  one visual scene, then resize the result to 600×400 webp:
+- **Publication thumbnails**: each entry shows `assets/img/pubs/<slug>.webp`, a
+  render of the paper's first page (400×566). To generate one from a new PDF:
 
-  > flat minimal editorial illustration; thin dark bottle-green ink outlines (1E5A41);
-  > fills limited to muted jade (7BC49A), warm buff (EFEBDD), and soft sage tints; warm
-  > off-white paper background (FBFAF7); generous negative space; clean geometry;
-  > landscape; absolutely no text, letters, numbers, words, or labels.
+  ```sh
+  python3 -c "
+  import fitz
+  from PIL import Image
+  doc = fitz.open('paper.pdf'); page = doc[0]
+  pix = page.get_pixmap(matrix=fitz.Matrix(400/page.rect.width, 400/page.rect.width), alpha=False)
+  Image.frombytes('RGB', (pix.width, pix.height), pix.samples).save('assets/img/pubs/slug.webp', 'WEBP', quality=82)"
+  ```
 
 - **BibTeX**: paste the official entry (arXiv's "Export BibTeX" or the ACL
   Anthology `.bib`) into the `<pre>` inside each entry's `<details class="bibtex">`.
@@ -73,7 +74,7 @@ python3 -m http.server 8000
 | `css/main.css` | Design tokens (light/dark), layout, components, print styles |
 | `js/main.js` | Theme toggle, scroll-spy, knight's tour animation (all optional enhancements) |
 | `assets/fonts/` | Self-hosted woff2 fonts and `@font-face` rules |
-| `assets/img/` | Favicon, Open Graph card, publication teasers (`pubs/`) |
+| `assets/img/` | Favicon, Open Graph card, publication thumbnails (`pubs/`) |
 | `assets/Qianfeng_Wen_CV.pdf` | CV served by the "Download CV" button |
 | `docs/design.md` | Design decisions and their rationale |
 | `404.html` | Not-found page served by GitHub Pages |
