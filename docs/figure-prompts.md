@@ -54,8 +54,10 @@ convert ig_*.png -filter Lanczos -resize 600x400 -quality 86 assets/img/pubs/<sl
 - **gpr-llm** — Three calm stages, left to right: first a neat single column of
   eight small passage cards, three of them tinted jade and connected by thin lines
   up to one small LLM chip that marks each with a score dot; second, dominating
-  the center, a smooth hill-shaped Gaussian surface drawn as an elegant fine
-  contour mesh with a soft buff confidence band beneath its curve; third, a bold
+  the center, a smooth multimodal surface with three distinct peaks of clearly
+  different heights, drawn as one continuous elegant fine contour mesh with a soft
+  buff confidence band beneath its curve (multimodality is the paper's point:
+  never draw a single bell); third, a bold
   arrow leading to a short ranked list of five horizontal bars, the top bar filled
   jade. Exactly one small label: GPR, beside the surface. Generous calm spacing
   between the three stages.
