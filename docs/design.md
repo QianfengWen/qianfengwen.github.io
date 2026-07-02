@@ -10,23 +10,24 @@ One page, one job: convince a professor, admissions committee, or collaborator w
 seconds that this is a productive, serious researcher, and route them to papers, CV,
 and contact without friction.
 
-## Concept: tournament board, journal page
+## Concept: journal page, field notes
 
-Two materials from Qianfeng's actual research world drive every visual decision:
+Qianfeng's research identity is LLM post-training (reinforcement learning, on-policy
+distillation, self-refinement), language-model agents, and LLMs for recommendation and
+information retrieval. Chess appears in the work only as a fully verifiable evaluation
+domain — the site treats it that way and never leads with it.
+
+Two materials drive every visual decision:
 
 1. **The scientific journal.** Body text is set in STIX Two Text, the typeface family
    commissioned for scientific publishing (STIX = Scientific and Technical Information
    Exchange). Headings invert to a sans (Schibsted Grotesk), the same sans-display-over-
    serif-body structure used by Nature and Science. To an academic reader this page
    subconsciously reads as "a paper," which is the correct register.
-2. **The tournament chessboard.** Qianfeng's forward-looking research line (ChessQA,
-   Grounded Chess Reasoning, MSc with Ashton Anderson) uses chess as a grounded domain
-   for LLM reasoning. Tournament boards are buff and deep green; that green is the site's
-   single accent, and buff is the tag/chip fill. The signature element (below) is a
-   knight's tour.
-
-This also gives an honest answer to "why does it look like this" — nothing is themed for
-decoration; the palette and signature encode what the research is about.
+2. **The researcher's notebook.** Deep study-green ink on warm archival paper, with buff
+   fills for tags and chips — the palette of ledgers, field notes, and library lamps.
+   Diagrams are drawn in that same ink: the hero's agent trail, the three research-thread
+   figures, and the matched set of illustrated paper teasers.
 
 ## Tokens
 
@@ -42,26 +43,38 @@ Color:
 
 | Token | Light | Dark | Meaning |
 |---|---|---|---|
-| paper | #FBFAF7 | #101411 | archival paper / night board |
+| paper | #FBFAF7 | #101411 | archival paper / night ink |
 | ink | #191C19 | #E7E4D8 | green-cast black / buff |
 | muted | #5D635C | #9AA096 | secondary text |
-| accent | #1E5A41 | #7BC49A | tournament board green / jade |
-| buff | #EFEBDD | #1B231D | light-square buff, chip fills |
+| accent | #1E5A41 | #7BC49A | study green / jade |
+| buff | #EFEBDD | #1B231D | warm buff, chip fills |
 | hairline | #E3E2D9 | #232A24 | rules and borders |
 
 Dark mode follows `prefers-color-scheme` with a manual toggle persisted to localStorage.
 
 ## Signature element
 
-An animated **knight's tour** on an 8×8 dot grid: a thin trail showing the knight's last
-nine moves, wandering the closed tour forever (a full tour drawn at once reads as a
-tangle; the moving window always reads as one calm line). It lives in the hero's portrait
-frame as the placeholder until a real photo is added (`assets/img/portrait.jpg`), and it
-encodes three of Qianfeng's threads at once: chess reasoning, sequential decision-making
-(MCTS), and search. The markup ships a static frame of the same animation, so no-JS and
-`prefers-reduced-motion` visitors see a valid still. A 2×3
-"knight move" mark (three dots joined by an L path) derived from it serves as the header
-mark and favicon.
+An **agent exploring a grid world**: on an 8×8 dot lattice, a comet trail of the agent's
+last nine moves wanders forever (the trail is a precomputed closed walk, so the animation
+loops seamlessly; a full walk drawn at once reads as a tangle, while the moving window
+always reads as one calm line). It lives in the hero's portrait frame as the placeholder
+until a real photo is added (`assets/img/portrait.jpg`), and it encodes the research in
+one image: an agent taking actions, exploring, improving. The markup ships a static frame
+of the same animation, so no-JS and `prefers-reduced-motion` visitors see a valid still.
+
+## Figures and icons
+
+- **Research threads**: three hand-drawn SVG figures in the site ink — a training curve
+  (post-training), a model-environment loop (agents), and a query branching into a ranked
+  list (recommendation and retrieval).
+- **Paper teasers**: a matched set of flat editorial illustrations, one per paper,
+  generated with gpt-image-2 under a single locked style prompt (bottle-green ink,
+  jade/buff fills, warm paper ground, no text) and reviewed individually. Consistency of
+  the set is the point — mixed styles read as clip art.
+- **Contact and UI icons**: monoline SVGs drawn in currentColor (download, envelope,
+  mortarboard, code brackets, badge), always paired with text labels; no brand glyph
+  rows. A small step mark (two dots joined by an L path — one move on the grid) serves
+  as the header mark and favicon.
 
 Boldness is spent here only. Everything else is quiet: no scroll-reveal effects, no
 gradients, no cards with drop shadows. Hover states are underline and background shifts.
@@ -71,18 +84,20 @@ gradients, no cards with drop shadows. Hover states are underline and background
 Single page, anchored sections, max width 1080px, text measure ~68ch.
 
 ```
-[ mark  Qianfeng Wen        About  News  Publications  Experience  Awards   theme ]
+[ mark  Qianfeng Wen   About Research News Publications Experience Awards  theme ]
 --------------------------------------------------------------------------------
-|  MSC COMPUTER SCIENCE / UNIVERSITY OF TORONTO (mono eyebrow)   +----------+  |
+|  COMPUTER SCIENCE / UNIVERSITY OF TORONTO (mono eyebrow)       +----------+  |
 |  Qianfeng Wen  (display, ~64px)                                | portrait |  |
-|  2–3 sentence positioning statement, serif, inline links       |  frame / |  |
-|  [Email] [Google Scholar] [GitHub] [LinkedIn] [CV (accent)]    |  knight  |  |
+|  Positioning statement, serif, inline links                    |  frame / |  |
+|  [topic chips: post-training, OPD, agents, recsys, IR]         |  agent   |  |
+|  [CV (accent)] [Email] [Scholar] [GitHub] [LinkedIn] w/ icons  |  trail   |  |
 |                                                                +----------+  |
-|  About: two short serif paragraphs (research threads, past labs)              |
-|  News: mono date | serif entry (6 rows)                                       |
-|  Publications: year rail | entries (title sans / authors serif, me bold,      |
-|      * equal contribution legend / venue chip mono / Paper · Project · Code)  |
-|  Experience: Research (3 labs) + Industry (3 roles), dates in mono rail       |
+|  About: three short serif paragraphs + Currently/Previously rail              |
+|  Research: three framed thread panels, SVG figure + blurb + paper links       |
+|  News: mono date | serif entry                                                |
+|  Publications: year rail | teaser image | venue eyebrow / title / authors /   |
+|      links / BibTeX accordion (* equal contribution legend in section head)   |
+|  Experience: Education + Research (3 labs) + Industry (3 roles)               |
 |  Awards & Service: year rail | award, grantor                                 |
 |  Footer: email, links, last-updated, colophon (type + license note)           |
 ```
@@ -95,13 +110,12 @@ with a legend under the section title. Venue chips use friendly full names ("EMN
 Main Conference", "Under review at COLM 2026"), never raw abbreviation soup; orals get
 an accent-tinted flag chip.
 
-Each entry carries a first-page thumbnail (webp, 400×566, rendered from the paper PDF)
-linked to the paper — per a survey of twelve professional researcher sites, teaser
-thumbnails are the single strongest upgrade over a text-only list. The one paper without
-a public PDF (IEEE SSRR) gets a hand-drawn MCTS-tree card in the site's design language
-rather than a fake page. Every entry also exposes official BibTeX (arXiv / ACL Anthology
-exports; a minimal constructed entry for the IEEE paper) in a native `<details>`
-accordion — no JavaScript involved.
+Each entry carries an illustrated teaser (webp, 600×400, 3:2) linked to the paper — per
+a survey of twelve professional researcher sites, teaser images are the single strongest
+upgrade over a text-only list; a matched illustration set (see Figures and icons) reads
+hand-crafted where mixed styles would read as clip art. Every entry also exposes official
+BibTeX (arXiv / ACL Anthology exports; a minimal constructed entry for the IEEE paper) in
+a native `<details>` accordion — no JavaScript involved.
 
 ### Survey reconciliation (July 2026)
 
@@ -117,7 +131,7 @@ ten entries), and no hover GIF swaps (no animated teasers exist yet; slot fits l
 ## Engineering constraints
 
 - Pure static HTML/CSS/JS, zero build step, works with JavaScript disabled
-  (JS adds only: theme toggle, knight-tour animation, scroll-spy). GitHub Pages ready
+  (JS adds only: theme toggle, agent-trail animation, scroll-spy). GitHub Pages ready
   (`.nojekyll`, repo name `qianfengwen.github.io`, push to `main`).
 - Self-hosted fonts (no third-party requests, no CDN dependency).
 - Semantic HTML with JSON-LD `Person` schema (`sameAs`: Scholar, GitHub, LinkedIn) for
