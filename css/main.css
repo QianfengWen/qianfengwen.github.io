@@ -837,6 +837,18 @@ a.visually-hidden:focus-visible {
   color: var(--accent);
 }
 
+.xp h4 .org-logo {
+  flex: none;
+  margin-top: 0.15em;
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 1px;
+}
+
 .xp .role {
   display: block;
   font-family: var(--font-body);

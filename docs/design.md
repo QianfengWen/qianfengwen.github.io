@@ -74,8 +74,12 @@ and research-thread figures.
   where illustrations read editorial.
 - **Contact and UI icons**: monoline SVGs drawn in currentColor (download, envelope,
   mortarboard, code brackets, badge), always paired with text labels; no brand glyph
-  rows. A small step mark (two dots joined by an L path — one move on the grid) serves
-  as the header mark and favicon.
+  rows in the contact area. A small step mark (two dots joined by an L path — one move
+  on the grid) serves as the header mark and favicon.
+- **Organization logos**: by owner decision, experience entries show each
+  organization's real mark (`assets/img/orgs/`, sourced from the orgs' favicons) on a
+  small white chip so dark marks survive dark mode. ZBot has no public mark yet and
+  keeps a monoline robot; D3M has no mark of its own and uses the UofT crest.
 
 Boldness is spent here only. Everything else is quiet: no scroll-reveal effects, no
 gradients, no cards with drop shadows. Hover states are underline and background shifts.
