@@ -1,0 +1,402 @@
+\documentclass[letterpaper,11pt]{article}
+% Include the mathpazo package
+\usepackage{mathpazo}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\usepackage{booktabs}
+\input{glyphtounicode}
+% academicons needs XeLaTeX/LuaLaTeX and no \ai... icon is used in this document;
+% keep it disabled so the file compiles with plain pdflatex.
+% \usepackage{academicons}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\LARGE \scshape Qianfeng Wen} \\ \vspace{1pt}
+    Toronto, Canada \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ 647-894-7316 ~ \href{mailto:qianfeng.wen@mail.utoronto.ca}{\raisebox{-0.2\height}\faEnvelope\  \underline{qianfeng.wen@mail.utoronto.ca}} ~ 
+    \href{https://linkedin.com/in/qianfeng-wen-23a127290/}{\raisebox{-0.2\height}\faLinkedin\ \underline{LinkedIn}}  ~
+    \href{https://github.com/QianfengWen/}{\raisebox{-0.2\height}\faGithub\ \underline{Github}} ~
+    \href{https://scholar.google.com/citations?user=auhnI1MAAAAJ}{\raisebox{-0.2\height}\faGraduationCap\ \underline{Google Scholar}}
+    \vspace{-8pt}
+\end{center}
+
+
+%-----------OBJECTIVE-----------
+% \section{Objective}
+%     \vspace{-2pt}
+%     {Seeking a research position of AI in Large Language Model or Robotics. Committed to advancing the field through innovative solutions and aspiring to contribute to cutting-edge research.}
+%     \vspace{-10pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+        {University of Toronto}{Sep.2026 -- }
+        {MSc in Computer Science, Supervisor: Ashton Anderson}{Toronto, Canada}
+    \resumeSubheading
+      {University of Toronto}{Sep. 2022 -- Jun. 2026}
+      {Bachelor. Computer Science Specialist, focus on AI}{Toronto, Canada}
+    \resumeItem{GPA}
+    {3.91/4.0}
+  \resumeSubHeadingListEnd
+
+%------RELEVANT COURSEWORK-------
+% \section{Relevant Coursework}
+%     % \resumeSubHeadingListStart
+%         \begin{multicols}{4}
+%             \begin{itemize}[itemsep=-5pt, parsep=3pt]
+%                 \item\small Data Structures
+%                 \item\small Algorithms Analysis
+%                 \item\small Machine Learning
+%                 \item\small Information Retrieval
+%                 \item\small Software Methodology
+%                 \item\small Statistics
+%             \end{itemize}
+%         \end{multicols}
+%         \vspace*{2.0\multicolsep}
+    % \resumeSubHeadingListEnd    
+
+%----------PUBLICATIONS----------
+\section{Publications (* denotes equal contribution)}
+  \vspace{-2pt}
+  \resumeSubHeadingListStart
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.78\textwidth}{SafeGEO: Understanding Generative Engine Optimization Risks in Recommendation Agents}} & \textit{2026} \\
+        \addlinespace[0.2em]
+        \small \parbox[t]{0.78\textwidth}{\textbf{\textit{Qianfeng Wen*}}, Yifan Simon Liu*, Xin Liu*, Difan Jiao, Blair Yang, Junda Wu, Zhenwei Tang} & \\
+        \small \href{https://qianfengwen.github.io/SafeGEO/}{\textit{arXiv preprint; project page}} & \\
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval}} & \textit{2026} \\
+        \addlinespace[0.3em]
+        \small \parbox[t]{0.8\textwidth}{Junyoung Kim, Anton Korikov, Jiazhou Liang, Justin Cui, Yifan Simon Liu, \textbf{\textit{Qianfeng Wen}}, Mark Zhao, Scott Sanner} & \\
+        \small
+        \href{https://aclanthology.org/2026.findings-acl.481/}{\textit{Findings of the Association for Computational Linguistics: ACL 2026}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{ThinkTwice: Jointly Optimizing Large Language Models for Reasoning and Self-Refinement}} & \textit{2026} \\
+        \addlinespace[0.3em]
+        \small \parbox[t]{0.8\textwidth}{Difan Jiao*, \textit{\textbf{Qianfeng Wen*}}, Blair Yang, Zhenwei Tang, Ashton Anderson} & \\
+        \small 
+        \href{https://arxiv.org/abs/2604.01591}{\textit{COLM 2026 under review}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{Grounded Chess Reasoning in Language Models via Master Distillation}} & \textit{2026} \\
+        \addlinespace[0.3em]
+        \small \parbox[t]{0.8\textwidth}{Zhenwei Tang, \textit{\textbf{Qianfeng Wen}}, Seth Grief-Albert, Yahya Elgabra, Blair Yang, Honghua Dong, Ashton Anderson} & \\
+        \small 
+        \href{https://arxiv.org/abs/2603.20510}{\textit{COLM 2026 under review}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{A Simple but Effective Elaborative Query Reformulation Approach for Natural Language Recommendation}} & \textit{2025} \\
+        \addlinespace[0.3em]
+        \small \parbox[t]{0.8\textwidth}{\textit{\textbf{Qianfeng Wen*}}, Yifan Liu*, Justin Cui*, Joshua Zhang, Anton Korikov, George-Kirollos Saad, Scott Sanner} & \\
+        \small 
+        \href{https://arxiv.org/abs/2510.02656}{\textit{arXiv:2510.02656}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{Natural Language Recommendation via Multimodal Item Scoring Using Gaussian Process Regression with LLM Relevance Judgments}} & \textit{2025} \\
+        \addlinespace[0.3em]
+        \small \parbox[t]{0.8\textwidth}{Yifan Liu*, \textbf{\textit{Qianfeng Wen*}}, Jiazhou Liang*, Mark Zhao*, Justin Cui, Anton Korikov, Armin Toroghi, Junyoung Kim and Scott Sanner} & \\
+        % \small \href{https://arxiv.org/abs/2310.12075}{arXiv:2310.12075} & \\
+        \small 
+        \href{https://arxiv.org/pdf/2510.22023}{\textit{Findings of the Association for Computational Linguistics: ACL 2026}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{ChessQA: Evaluating Large Language Models for Chess Understanding}} & \textit{2025} \\
+        \addlinespace[0.3em]
+        \small \textbf{\textit{Qianfeng Wen}}, Zhenwei Tang, Ashton Anderson & \\
+        % \small \href{https://arxiv.org/abs/2310.12075}{arXiv:2310.12075} & \\
+        \small 
+        \href{https://arxiv.org/abs/2510.23948}{\textit{COLM 2026 Under review}}
+      \end{tabular*}\vspace{-7pt}
+    \item \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{MA-DPR: Manifold-aware Distance Metrics for Dense Passage Retrieval}} & \textit{2025} \\
+        \addlinespace[0.3em]
+        \small Yifan Liu*, \textbf{\textit{Qianfeng Wen*}}, Mark Zhao*, Jiazhou Liang, Scott Sanner \\
+        % \small \href{https://arxiv.org/abs/2310.12075}{arXiv:2310.12075} & \\
+        \small 
+        \href{https://arxiv.org/abs/2509.13562}{\textit{Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP Main)}}
+      \end{tabular*}\vspace{-7pt}
+    \item 
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{A Comparative Study of Static and Contextual Embeddings for Analyzing Semantic Changes in Medieval Latin Charters}} & \textit{2024} \\
+        \addlinespace[0.3em]
+        \small Yifan Liu, Gelila Tilahun, Xinxiang Gao, \textit{\textbf{Qianfeng Wen}} and Michael Gervers & \\
+        % \small \href{https://arxiv.org/abs/2310.12075}{arXiv:2310.12075} & \\
+        \small 
+        \href{https://aclanthology.org/2025.loreslm-1.14/}{\textit{COLING'25 Workshop: LoResLM (oral)}}
+      \end{tabular*}\vspace{-7pt}
+    
+    \item
+      \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{\parbox[t]{0.8\textwidth}{Elaborative Subtopic Query Reformulation for Broad and Indirect Queries in Travel Destination Recommendation}} & \textit{2024} \\
+        \addlinespace[0.3em]
+        \small \textit{\textbf{{Qianfeng Wen*}}}, Yifan Liu*, Joshua Zhang,  George Saad, Anton Korikov, Yury Sambale and Scott Sanner & \\
+        % \small \href{https://arxiv.org/abs/2310.12075}{arXiv:2310.12075} & \\
+        \small
+        \href{https://arxiv.org/abs/2410.01598}{\textit{RecSys '24 Workshop: ROEGEN}} & \\
+      \end{tabular*}\vspace{-7pt}
+      
+    \item
+      \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+        \textbf{Monte-Carlo Tree Search for Behavior Planning in Autonomous Driving} & \textit{2024} \\
+        \small \textit{\textbf{{Qianfeng Wen}}}, Zhongyi Gong, Lifeng Zhou and Zhongshun Zhang & \\
+        \small
+        \href{https://ieeexplore.ieee.org/abstract/document/10770028}{\textit{IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR) '24 (oral)}} & \\
+      \end{tabular*}\vspace{-7pt} 
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Working Experience}
+  \resumeSubHeadingListStart
+    
+    \resumeSubheading
+      {ZBot Technology}{October 2025 -- Present}
+      {Co-founder \& CTO}{Toronto, Canada}
+      \resumeItemListStart
+        \resumeItem{Led development of a Export oriented AI agent system.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Air Canada}{June 2024 -- August 2024}
+      {AI Engineer Intern (in collaboration with D3M Lab @ UofT)}{Toronto, Canada}
+      \resumeItemListStart
+        \resumeItem{Led development of a travel recommender system that adapts to free‑form user queries.}
+        \resumeItem{Curated and released \textbf{TravelDest}, the first benchmark dataset for travel search, combining WikiVoyage content with insights from travel experts.}
+        \resumeItem{Developed an LLM-based query reformulation + dense retrieval pipeline, improving R-precision by \textbf{12\%} over baseline.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Bosch}{May 2023 -- August 2023}
+      {Autonomous Driving Intern}{Shanghai, China}
+      \resumeItemListStart
+        \resumeItem{Contributed to Bosch's \textit{Wave3} autonomous driving program with a focus on motion planning algorithms.}
+        \resumeItem{Designed an MCTS-based decision-making framework for complex urban/highway scenarios; achieved a \textbf{98\%} success rate with planning latency \textless{} \textbf{0.2}s on project benchmarks.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+
+\section{Research Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {CSS Lab (University of Toronto)}{May 2025 -- June 2026}
+      {Undergraduate Researcher; Supervisor: Ashton Anderson}{Toronto, Canada}
+      \resumeItemListStart
+        \resumeItem{Created \textbf{ChessQA}, a benchmark to evaluate large language models on comprehensive chess understanding (tactics, strategy, notation, and explanation quality).}
+        \resumeItem{Explored supervised fine-tuning and reinforcement learning to train and distill chess-specialized LLMs for reasoning and move justification.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {D3M Lab (University of Toronto)}{May 2024 -- March 2026}
+      {Summer Intern \& Undergraduate Researcher; Supervisor: Scott Sanner}{Toronto, Canada}
+      \resumeItemListStart
+        \resumeItem{Built Retrieval-Augmented Generation (RAG) QA pipelines combining sparse and dense retrieval (FAISS) with LLMs; developed LLM-driven query reformulation \textbf{EQR} and user-intent modeling to improve retrieval relevance.}
+        \resumeItem{Proposed \textbf{Manifold Distance}, a training-agnostic metric inspired by Manifold Ranking, outperforming cosine/dot-product measures on Dense Passage Retrieval (DPR) benchmarks.}
+        \resumeItem{Introduced \textbf{GPR-LLM}: a Gaussian Process Regression approach with LLM relevance judgments to model multimodal item relevance, consistently exceeding DR, cross-encoder, and pointwise LLM rerankers across four NLRec datasets and two backbone LLMs.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {The Matter Lab (University of Toronto)}{April 2024 -- January 2026}
+      {Undergraduate Researcher \& Full-time Summer Intern; Supervisor: Alán Aspuru-Guzik}{Toronto, Canada}
+      \resumeItemListStart
+        \resumeItem{Explored multi-agent debate (MAD), Chain-of-Thought (CoT), and Tree-of-Thought (ToT) methods to strengthen LLM logical reasoning; analyzed whether LLMs exhibit schema-based learning behaviors.}
+        \resumeItem{Investigated compositional training methods (e.g., Ito density sampler) for diffusion models on 2D-ARC problems.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{Decision-making in Autonomous Driving using Monte Carlo Tree Search (MCTS)} $|$ \emph{Matlab}}{\href{https://github.com/zhongshun/MCTS_for_Behavior_Planning}{90 Stars on github}}
+          \resumeItemListStart
+            \resumeItem{Designed and implemented a comprehensive decision-making framework employing MCTS for diverse autonomous driving scenarios.}
+            \resumeItem{Successfully validated the framework's effectiveness in varied conditions, ranging from complex urban intersections to highway exits.}
+          \resumeItemListEnd
+          
+          % \vspace{-13pt}
+          
+        % \resumeProjectHeading
+        %   {\textbf{ChatterBox Pro: Enhanced Chatting Experience with Weather Insights \& Humor API} $|$ \emph{Java, MongoDB, APIs}}{}
+        %   \resumeItemListStart
+        %     \resumeItem{Cafted an online chatting system meticulously in Java, integrates the best practices of Clean Architecture and SOLID principles, ensuring a robust and scalable solution.}
+        %     \resumeItem{Implemented MongoDB for backend data management, optimizing performance and reliability.}
+        %     \resumeItem{Integrated real-time weather information and humor content via APIs to enrich user interaction and engagement.}
+        %   \resumeItemListEnd 
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+\section{Professional Service}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{
+        \item{
+            \textbf{Reviewer}, IEEE International Conference on Robotics and Automation (ICRA) 2025
+        }
+    }
+\end{itemize}
+\vspace{-16pt}
+
+\section{Honors \& Awards}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{
+        \item {
+            2026. Vector Scholarship in Artificial Intelligence. Vector Institute, Toronto. Research. \$17,500
+        }
+        \item{
+            2025. Department of Computer Science Research Award. Department of Computer Science, University of Toronto. Institutional. Research. \$8,000.
+        }
+        \item{
+            2023-2025. Dean’s List Scholar. University of Toronto. Institutional. Academic. \$0.
+        }
+        \item{
+            2024-2025. Chancellor’s Scholarship. Trinity College, University of Toronto. Institutional. Academic. \$500.
+        }
+        \item{
+            2024. Educational Training Stipend. Department of Mechanical \& Industrial Engineering, University of Toronto. Institutional. Research. \$2,500.
+        }
+    }
+\end{itemize}
+\vspace{-16pt}
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, C, Matlab, R} \\
+     \textbf{Technologies/Frameworks}{: verl, vLLM, SGLang, Prompt Engineering (OpenAI, LangChain), Pytorch, SkLearn, GitHub, Matlab Tool Boxes} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+
+%-----------INVOLVEMENT---------------
+% \section{Leadership / Extracurricular}
+%     \resumeSubHeadingListStart
+%         \resumeSubheading{Fraternity}{Spring 2020 -- Present}{President}{University Name}
+%             \resumeItemListStart
+%                 \resumeItem{Achieved a 4 star fraternity ranking by the Office of Fraternity and Sorority Affairs (highest possible ranking).}
+%                 \resumeItem{Managed executive board of 5 members and ran weekly meetings to oversee progress in essential parts of the chapter.}
+%                 \resumeItem{Led chapter of 30+ members to work towards goals that improve and promote community service, academics, and unity.}
+%             \resumeItemListEnd
+        
+%     \resumeSubHeadingListEnd
+
+
+\end{document}

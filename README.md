@@ -49,8 +49,18 @@ Everything is plain HTML in `index.html`; each section is marked with a
 
 - **BibTeX**: paste the official entry (arXiv's "Export BibTeX" or the ACL
   Anthology `.bib`) into the `<pre>` inside each entry's `<details class="bibtex">`.
-- **CV**: replace `assets/Qianfeng_Wen_CV.pdf` with the new file (same name, no
-  HTML edits needed), and update the "Last updated" line in the footer.
+- **CV**: the LaTeX source is `assets/main.tex`. Edit it, rebuild, and replace
+  the served PDF:
+
+  ```sh
+  latexmk -pdf -outdir=/tmp/cv-build assets/main.tex
+  cp /tmp/cv-build/main.pdf assets/Qianfeng_Wen_CV.pdf
+  ```
+
+  TeX lives in `~/.TinyTeX` (user-space TeX Live; no sudo). If a package is
+  missing, `tlmgr install <name>`. The file compiles with plain pdflatex; keep
+  `academicons` commented out (it forces XeLaTeX and nothing here uses it).
+  Update the "Last updated" line in the footer when the CV changes.
 
 After editing, commit and push; GitHub Pages redeploys automatically.
 
@@ -70,7 +80,8 @@ python3 -m http.server 8000
 | `js/main.js` | Theme toggle, scroll-spy, knight's tour animation (all optional enhancements) |
 | `assets/fonts/` | Self-hosted woff2 fonts and `@font-face` rules |
 | `assets/img/` | Favicon, Open Graph card, publication thumbnails (`pubs/`) |
-| `assets/Qianfeng_Wen_CV.pdf` | CV served by the "Download CV" button |
+| `assets/main.tex` | LaTeX source of the CV |
+| `assets/Qianfeng_Wen_CV.pdf` | CV served by the "Download CV" button, built from `main.tex` |
 | `docs/design.md` | Design decisions and their rationale |
 | `docs/figure-prompts.md` | Style and scene prompts for the publication figures |
 | `404.html` | Not-found page served by GitHub Pages |

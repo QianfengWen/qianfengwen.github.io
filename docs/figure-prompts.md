@@ -61,6 +61,15 @@ convert ig_*.png -filter Lanczos -resize 600x400 -quality 86 assets/img/pubs/<sl
   arrow leading to a short ranked list of five horizontal bars, the top bar filled
   jade. Exactly one small label: GPR, beside the surface. Generous calm spacing
   between the three stages.
+- **bagel** — One wide calm plot: a smooth relevance curve with three peaks of
+  clearly different heights; a soft jade confidence band hugs the curve, pinched
+  tight at four small jade dots sitting on the curve and swelling wide between
+  them; in a narrow strip below, a gentle acquisition curve filled warm buff, its
+  highest swell sitting under a wide stretch of the band; a small bold downward
+  triangle marks that swell, joined to the main curve above by a thin dashed
+  vertical line. No text anywhere. (The current bagel.webp is a hand-drawn SVG
+  in the house style, not a gpt-image-2 render; regenerate from this prompt if
+  it should match the others exactly.)
 - **ma-dpr** — A graceful S-shaped ribbon of small dots forming a point cloud,
   joined into a sparse graph by faint short edges; at the lower end of the S a
   clear five-pointed star marks the query, the star filled muted jade with a

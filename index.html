@@ -239,11 +239,13 @@
             <h3>Recommendation &amp; retrieval</h3>
             <p>Language models change how people search for things they cannot name yet.
                EQR expands a vague query into the subtopics it implies, GPR-LLM scores items
-               with Gaussian processes over LLM relevance judgments, and MA-DPR rethinks what
+               with Gaussian processes over LLM relevance judgments, BAGEL decides where each
+               of those judgments is best spent, and MA-DPR rethinks what
                &ldquo;close&rdquo; means in embedding space.</p>
             <p class="thread-papers">
               <a href="#pub-eqr">EQR</a>
               <a href="#pub-gpr-llm">GPR-LLM</a>
+              <a href="#pub-bagel">BAGEL</a>
               <a href="#pub-ma-dpr">MA-DPR</a>
             </p>
           </article>
@@ -277,7 +279,7 @@
           </li>
           <li>
             <time datetime="2026">2026</time>
-            <p>Our paper on <a href="https://arxiv.org/abs/2510.22023">Gaussian-process item scoring with LLM relevance judgments</a> was accepted to Findings of ACL 2026.</p>
+            <p>Two of our papers were accepted to Findings of ACL 2026: <a href="https://arxiv.org/abs/2510.22023">Gaussian-process item scoring with LLM relevance judgments</a> and <a href="https://aclanthology.org/2026.findings-acl.481/">Bayesian active learning for dense passage retrieval</a>.</p>
           </li>
           <li>
             <time datetime="2025-08">Aug 2025</time>
@@ -325,6 +327,36 @@
       archivePrefix={arXiv},
       primaryClass={cs.IR},
       url={https://arxiv.org/abs/2606.28356},
+}</pre>
+                  </details>
+                </div>
+              </div>
+            </li>
+            <li class="pub" id="pub-bagel">
+              <a class="pub-thumb" href="https://aclanthology.org/2026.findings-acl.481/" tabindex="-1" aria-hidden="true">
+                <img src="assets/img/pubs/bagel.webp" alt="" loading="lazy" width="600" height="400">
+              </a>
+              <div class="pub-body">
+                <div class="pub-eyebrow"><span class="venue">ACL 2026 &middot; Findings</span></div>
+                <h4 class="pub-title"><a href="https://aclanthology.org/2026.findings-acl.481/">Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring for Dense Passage Retrieval</a></h4>
+                <p class="pub-authors">Junyoung Kim, Anton Korikov, Jiazhou Liang, Justin Cui, Yifan Simon Liu, <span class="me">Qianfeng Wen</span>, Mark Zhao, Scott Sanner</p>
+                <div class="pub-meta">
+                  <span class="pub-links">
+                    <a href="https://aclanthology.org/2026.findings-acl.481/">Paper</a>
+                    <a href="https://arxiv.org/abs/2604.17906">arXiv</a>
+                  </span>
+                  <details class="bibtex">
+                    <summary>BibTeX</summary>
+                    <pre>@inproceedings{kim-etal-2026-bayesian,
+    title = "{B}ayesian Active Learning with {G}aussian Processes Guided by {LLM} Relevance Scoring for Dense Passage Retrieval",
+    author = "Kim, Junyoung and Korikov, Anton and Liang, Jiazhou and Cui, Justin and Liu, Yifan Simon and Wen, Qianfeng and Zhao, Mark and Sanner, Scott",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2026",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-acl.481/",
+    pages = "9884--9898"
 }</pre>
                   </details>
                 </div>
@@ -651,7 +683,7 @@
             <time>Apr 2024 &ndash; Jan 2026</time>
             <div>
               <h4><img class="org-logo" src="assets/img/orgs/matter.png" alt="" width="16" height="16" loading="lazy">The Matter Lab, University of Toronto</h4>
-              <span class="role">Researcher, supervised by Al&aacute;n Aspuru-Guzik, Haozhe Huang, and Pan Chen</span>
+              <span class="role">Researcher, supervised by Al&aacute;n Aspuru-Guzik</span>
               <p>Asked whether language models actually reason. We probed multi-agent debate
                  and tree-of-thought prompting, and tried compositional training for diffusion
                  models on ARC-style puzzles.</p>
